@@ -1,8 +1,12 @@
 # review-myblog-converter
 
-> 옵시디언 리뷰 노트를 *내* 블로그 톤(네이버 블로그·티스토리·벨로그)으로 변환하는 Claude Skill.
+> 옵시디언 리뷰 노트를 *내* 블로그 톤(네이버 블로그·티스토리·벨로그)으로 변환하는 AI agent skill.
+> 한국어 블로그 전용 — *사용자 본인*의 톤을 학습해 같은 데이터에서 결만 바꿔 재작성한다.
 
 [![Made with](https://img.shields.io/badge/Made%20with-Claude%20Skills-blueviolet)](https://docs.claude.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Korean only](https://img.shields.io/badge/Language-Korean%20only-red)](#트리거하지-않는-경우)
+[![Companion](https://img.shields.io/badge/Companion-polymedia--review--skill-blueviolet)](https://github.com/rhino-ty/polymedia-review-skill)
 
 ---
 
@@ -55,23 +59,20 @@ review-myblog-converter/
 
 ## 설치
 
-### 방법 1: 직접 패키징
-
-[skill-creator](https://github.com/anthropics/skills/tree/main/skill-creator) 의 `package_skill.py` 사용:
-
 ```bash
-python -m scripts.package_skill /path/to/review-myblog-converter /path/to/output
+npx skills add rhino-ty/review-myblog-converter
 ```
 
-### 방법 2: 릴리스에서 다운로드
+[vercel-labs/skills](https://github.com/vercel-labs/skills) CLI가 GitHub 레포에서 직접 SKILL.md를 가져와 Claude Code, Cursor, Codex 등 지원 에이전트에 설치한다. 옵션:
 
-[Releases](../../releases) 페이지에서 `review-myblog-converter.skill` 파일 다운로드.
+- `-g` / `--global` — 사용자 단위로 전역 설치 (모든 프로젝트에서 사용)
+- `-a <agent>` — 특정 에이전트에만 설치 (예: `claude-code`)
+- `--all` — 자동 확인 + 모든 에이전트에 설치
 
-### Claude.ai에 업로드
-
-1. Claude.ai → **Settings → Capabilities → Skills**
-2. **Upload Skill** 선택
-3. `review-myblog-converter.skill` 파일 업로드 후 활성화
+> 짝꿍 스킬도 같이 설치하면 워크플로우가 끝까지 연결됩니다:
+> ```bash
+> npx skills add rhino-ty/polymedia-review-skill
+> ```
 
 ## 사용 흐름
 
@@ -100,6 +101,24 @@ Step 5: 이미지 자리 + 추신
 - "내 블로그 톤으로"
 - "이 노트 가볍게 독자용으로"
 - 옵시디언 리뷰 노트 첨부 + "블로그에 올리고 싶어"
+
+### 트리거 키워드
+
+```
+블로그, 네이버 블로그, 티스토리, 벨로그, 변환, 톤, 후기, 글, 포스트,
+리뷰 글, 독자용, 발행, 후킹 제목, 블로그 톤, 내 블로그, 마이 블로그
+```
+
+### 트리거하지 않는 경우
+
+이 스킬은 *사용자 본인*의 한국어 블로그 톤 전용 변환기다. 다음 상황엔 작동하지 않는다:
+
+- 옵시디언 노트 *작성* 자체가 필요한 경우 → [`polymedia-review-skill`](https://github.com/rhino-ty/polymedia-review-skill) 사용
+- 단순 줄거리 요약·작품 정보 조회
+- 학술적 평론·논문 형태
+- 다른 사람의 블로그 톤 모방 (이 스킬은 사용자 본인 톤 전용)
+- 영어·일본어 등 한국어 외 언어로의 변환
+- SEO 목적의 대량 블로그 글 생성
 
 ## 톤 핵심 규칙
 
