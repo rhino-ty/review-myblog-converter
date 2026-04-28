@@ -22,7 +22,7 @@
 
 ## 짝꿍 스킬
 
-이 스킬은 **[`polymedia-review-skill`](https://github.com/YOUR_USERNAME/polymedia-review-skill)** 과 짝을 이룬다.
+이 스킬은 **[`polymedia-review-skill`](https://github.com/rhino-ty/polymedia-review-skill)** 과 짝을 이룬다.
 
 ```
 polymedia-review-skill          # 인터뷰 → 옵시디언 노트
@@ -133,4 +133,4 @@ MIT License. 자세한 내용은 [LICENSE](LICENSE) 참조.
 ## Credits
 
 - 톤 가이드 학습 베이스: 후루꾸 블로그(영감) + 사용자 본인의 발행 글
-- 짝꿍 스킬: [`polymedia-review-skill`](https://github.com/YOUR_USERNAME/polymedia-review-skill)
+- 짝꿍 스킬: [`polymedia-review-skill`](https://github.com/rhino-ty/polymedia-review-skill)
