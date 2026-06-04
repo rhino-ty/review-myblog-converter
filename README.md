@@ -1,6 +1,6 @@
 # review-myblog-converter
 
-> 옵시디언 리뷰 노트를 *내* 블로그 톤(네이버 블로그·티스토리·벨로그)으로 변환하는 AI agent skill.
+> 1차 노트(옵시디언·Logseq·Notion·Bear·일반 마크다운 등)를 *내* 블로그 톤(네이버 블로그·티스토리·벨로그)으로 변환하는 AI agent skill.
 > 한국어 블로그 전용 — *사용자 본인*의 톤을 학습해 같은 데이터에서 결만 바꿔 재작성한다.
 
 [![Made with](https://img.shields.io/badge/Made%20with-Claude%20Skills-blueviolet)](https://docs.claude.com)
